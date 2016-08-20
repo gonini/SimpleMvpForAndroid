@@ -1,5 +1,6 @@
-# SimpleMvp
-This is simple mvp pattern library for rxlifecycle.  
+# SimpleMvp for Android.
+This is simple mvp pattern library for android.  
+this library support rxlifecyle(https://github.com/trello/RxLifecycle).
 
 # Example
 ### Activity
