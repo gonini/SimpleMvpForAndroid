@@ -7,8 +7,9 @@ import com.maumqmaum.mvp.view.MvpView;
 
 import java.lang.ref.WeakReference;
 
-import rx.Observable;
-import rx.subjects.BehaviorSubject;
+import io.reactivex.Observable;
+import io.reactivex.subjects.BehaviorSubject;
+
 
 public class MvpBasePresenter<V extends MvpView> implements MvpPresenter<V> {
 
@@ -40,6 +41,6 @@ public class MvpBasePresenter<V extends MvpView> implements MvpPresenter<V> {
 
     @NonNull
     public final Observable<PresenterEvent> lifecycle() {
-        return lifecycleSubject.asObservable();
+        return lifecycleSubject;
     }
 }

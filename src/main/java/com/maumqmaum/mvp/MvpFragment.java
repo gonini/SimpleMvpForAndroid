@@ -13,8 +13,8 @@ import com.maumqmaum.mvp.event.FragmentEvent;
 import com.maumqmaum.mvp.presenter.MvpPresenter;
 import com.maumqmaum.mvp.view.MvpView;
 
-import rx.Observable;
-import rx.subjects.BehaviorSubject;
+import io.reactivex.Observable;
+import io.reactivex.subjects.BehaviorSubject;
 
 public abstract class MvpFragment<V extends MvpView, P extends MvpPresenter<V>> extends Fragment
         implements MvpView {
@@ -97,7 +97,7 @@ public abstract class MvpFragment<V extends MvpView, P extends MvpPresenter<V>> 
 
     @NonNull
     public final Observable<FragmentEvent> lifecycle() {
-        return lifecycleSubject.asObservable();
+        return lifecycleSubject;
     }
 
 

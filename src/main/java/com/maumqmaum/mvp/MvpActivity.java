@@ -9,8 +9,8 @@ import com.maumqmaum.mvp.event.ActivityEvent;
 import com.maumqmaum.mvp.presenter.MvpPresenter;
 import com.maumqmaum.mvp.view.MvpView;
 
-import rx.Observable;
-import rx.subjects.BehaviorSubject;
+import io.reactivex.Observable;
+import io.reactivex.subjects.BehaviorSubject;
 
 public abstract class MvpActivity<V extends MvpView, P extends MvpPresenter<V>> extends AppCompatActivity
         implements MvpView {
@@ -68,6 +68,6 @@ public abstract class MvpActivity<V extends MvpView, P extends MvpPresenter<V>> 
 
     @NonNull
     public final Observable<ActivityEvent> lifecycle() {
-        return lifecycleSubject.asObservable();
+        return lifecycleSubject;
     }
 }
